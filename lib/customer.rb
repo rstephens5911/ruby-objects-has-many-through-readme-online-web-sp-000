@@ -17,9 +17,16 @@ class Customer
     Meal.new(waiter, self, total, tip) # self, here, is the customer
   end
 
-  def meals
+  def meals #calls all the meals ordered by the current customer
     Meal.all.select do |meal|
-      meal.customer == self
+      meal.customer == self # self = current customer object
+    end
+  end
+
+  def waiters
+    meals.map do |meal| # uses #meals, above to find the waiters
+                        # associated with that customer's (self) meals
+      meal.waiter
     end
   end
 
