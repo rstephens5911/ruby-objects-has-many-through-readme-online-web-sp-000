@@ -1,5 +1,5 @@
 class Customer
-  arrr_accessor :name, :age
+  atrr_accessor :name, :age
 
   @@all = []
 
